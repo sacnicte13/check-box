@@ -1,0 +1,58 @@
+#codigo para experimentar con MessageBOx
+from tkinter import *
+from tkinter import messagebox
+import tkinter as tk
+
+root = tkinter.Tk()
+root.resizable(False, True)
+root.title('Checkbox Demo')
+
+agreement = tk.StringVar()
+
+
+ventana = Tk()
+#### definimos funciones
+
+def mensajote():
+    i=0
+    messagebox.showinfo("este es el titulo","esto es la ventana")
+
+def ErrorMnensaje():
+    messagebox.showerror("ventana de error", "aqui se describe el error")
+    
+def askretrycancel():
+    messagebox.askretrycancel("ventada de askretry","aqui se cancela")
+
+
+def yesno ():
+    messagebox.askyesno("ventana de yes no", "aqui se selecciona")
+    
+def askquestion ():
+    
+    messagebox.askquestion("ventana de askqustion", "aqui se pregunta")    
+    
+def agreement_changed():
+    tk.messagebox.showinfo(title="resultado",message=agreement.get())
+    
+
+    
+
+ventana.geometry('250x250')
+#definimos commponentes de ventana
+Boton_MSG = Button(ventana, text="clik para ver mensaje", command=mensajote)
+Boton_error = Button(ventana, text="click para ver error", command=ErrorMnensaje)
+Boton_askretry = Button(ventana, text="click para ver askretry", command=askretrycancel)
+Boton_yes_no = Button(ventana, text="click para ver yes no", command=yesno)
+boton_askquestion = Button(ventana, text="click para ver askquestion", command=askquestion)
+boton_Checkbutton(root,text="estoy de acerdo",command=agreement_changed,variable=agreement,onvalue="acepto",offvalue="disagree")
+#definimos posicion en ventana de los controles o widgets
+#Boton_MSG.pack()
+Boton_MSG.place(x=15, y=55)
+Boton_error.place(x=15, y=27)
+Boton_askretry.place(x=15, y=0)
+Boton_yes_no.place(x=15, y=83)
+boton_askquestion.place(x=15, y= 110)
+boton_
+
+####
+ventana.mainloop() 
